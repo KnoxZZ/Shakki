@@ -1,30 +1,39 @@
 package utils;
 
-import java.util.Arrays;
+import nappulat.Nappula;
 
 public class Position {
 	final char[] characters = {'A','B','C','D','E','F','G','H'};
+	Nappula nappula;
+	boolean hasNappula;
 	int x;
 	int y;
 	
-	public Position(int x, int y) {
+	public Position(int x, int y, boolean hasNappula) {
 		this.x = x;
 		this.y = y;
-	}
-
-	public void stringTo(String pos) {
-		pos.replaceAll("\\s+","").toUpperCase();
-		int temp = Arrays.asList(characters).indexOf(pos.substring(1, 2));
-		int temp2 = Integer.parseInt(pos.substring(2,3));
-		if((temp > 0 && temp < 9)&&(temp2 > 0 && temp2 < 9)) {
-			this.setX(temp);
-			this.setY(temp2);
-		}
+		this.hasNappula = hasNappula;
 	}
 	
 	@Override
 	public String toString() {
 		return characters[x-1] + "" + y;
+	}
+	
+	public boolean isHasNappula() {
+		return hasNappula;
+	}
+
+	public void setHasNappula(boolean hasNappula) {
+		this.hasNappula = hasNappula;
+	}
+
+	public Nappula getNappula() {
+		return nappula;
+	}
+
+	public void setNappula(Nappula nappula) {
+		this.nappula = nappula;
 	}
 	
 	public int getX() {

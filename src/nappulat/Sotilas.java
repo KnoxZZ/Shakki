@@ -2,8 +2,8 @@ package nappulat;
 
 public class Sotilas extends Nappula {
 	boolean ekaAskel;	//true ennen kuin eka askel on otettu
-	public Sotilas(boolean vari, String sijainti) {
-		super(vari, sijainti);
+	public Sotilas(boolean vari) {
+		super(vari);
 		ekaAskel = true;
 	}
 	
@@ -11,7 +11,7 @@ public class Sotilas extends Nappula {
 	public String toString() {
 		String tempvari = vari?"Valkoinen":"Musta";
 		String tempEkaAskel = ekaAskel?"On":"Ei";
-		return "Väri: " + tempvari + ", Sijainti: " + sijainti + ", Liikutettu: " + tempEkaAskel;
+		return "Vari: " + tempvari + ", Liikutettu: " + tempEkaAskel;
 	}
 
 	public boolean isEkaAskel() {
