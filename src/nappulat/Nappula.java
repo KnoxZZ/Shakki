@@ -3,7 +3,7 @@ package nappulat;
 import utils.Position;
 
 public class Nappula {
-	final String[] codes = {"♔","♕","♖","♗","♘","♙","♚","♛","♜","♝","♞","♟"};
+	final String[] codes = {"♔ ","♕ ","♖ ","♗ ","♘ ","♙ ","♚ ","♛ ","♜ ","♝ ","♞ ","♟ "};
 	boolean vari;	// vari true == valkoinen, vari false == musta
 	public Nappula(boolean vari) {
 		this.vari = vari;
@@ -19,7 +19,7 @@ public class Nappula {
 		if(vari)
 			return codes[nappula];
 		else
-			return codes[nappula+5];
+			return codes[nappula+6];
 	}
 
 	public boolean isVari() {

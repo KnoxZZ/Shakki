@@ -17,7 +17,10 @@ public class Position {
 	
 	@Override
 	public String toString() {
-		return characters[x-1] + "" + y;
+		if(hasNappula)
+			return nappula.toString();
+		else
+			return "  ";
 	}
 	
 	public boolean hasNappula() {
