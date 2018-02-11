@@ -9,11 +9,9 @@ public class Sotilas extends Nappula {
 	
 	@Override
 	public String toString() {
-		String tempvari = vari?"Valkoinen":"Musta";
-		String tempEkaAskel = ekaAskel?"On":"Ei";
-		return "Vari: " + tempvari + ", Liikutettu: " + tempEkaAskel;
+		return super.toStringWithNappula(5);
 	}
-
+	
 	public boolean isEkaAskel() {
 		return ekaAskel;
 	}

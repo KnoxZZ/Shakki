@@ -20,7 +20,7 @@ public class Position {
 		return characters[x-1] + "" + y;
 	}
 	
-	public boolean isHasNappula() {
+	public boolean hasNappula() {
 		return hasNappula;
 	}
 
