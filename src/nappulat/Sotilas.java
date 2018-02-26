@@ -1,5 +1,7 @@
 package nappulat;
 
+import utils.Position;
+
 public class Sotilas extends Nappula {
 	boolean ekaAskel;	//true ennen kuin eka askel on otettu
 	public Sotilas(boolean vari) {
@@ -18,6 +20,11 @@ public class Sotilas extends Nappula {
 
 	public void setEkaAskel(boolean ekaAskel) {
 		this.ekaAskel = ekaAskel;
+	}
+
+	@Override
+	public boolean isLegit(Position startPos, Position endPos) {
+		return true;
 	}
 	
 }
