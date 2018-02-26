@@ -36,8 +36,8 @@ public class Lauta {
 	public void startPos()
 	{
 		for(int i = 0; i < 8; i++) {
-			this.setNappula(6, i, new Sotilas(true));
-			this.setNappula(1, i, new Sotilas(false));
+			this.setNappula(1, i, new Sotilas(true));
+			this.setNappula(6, i, new Sotilas(false));
 			switch(i) {
 			case 0:
 			case 7:	
