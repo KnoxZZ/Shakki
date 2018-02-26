@@ -43,6 +43,7 @@ public class Lauta {
 			case 4:
 				this.setNappula(0, i, new Kuningatar(true));
 				this.setNappula(7, i, new Kuningatar(false));
+				break;
 			}
 		}
 	}
