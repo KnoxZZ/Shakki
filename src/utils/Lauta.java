@@ -15,6 +15,24 @@ public class Lauta {
 		 }
 	}
 	
+	public void delNappula(int x, int y) {
+		this.setHasNappula(x, y, false);
+	}
+	
+	public boolean legitMove(int x, int y) {
+		return x <= 7 && y <= 7 ? true : false;
+	}
+	
+	public boolean legitMove(String x, int y) {
+		int tempX = 0;
+		for (int i = 0; i < characters.length; i++) {
+			if(("" + characters[i]).toLowerCase().equals(x.toLowerCase())){
+				tempX = i;
+			}
+		}
+		return legitMove(tempX, y-1);
+	}
+	
 	public void startPos()
 	{
 		for(int i = 0; i < 8; i++) {
@@ -65,22 +83,12 @@ public class Lauta {
 		pelilauta[x][y].setHasNappula(true);
 	}
 	
+	public void setHasNappula(int x, int y, boolean bool) {
+		pelilauta[x][y].setHasNappula(bool);
+	}
+	
 	public void setPelilauta(Position[][] pelilauta) {
 		this.pelilauta = pelilauta;
-	}
-	
-	public boolean legitMove(int x, int y) {
-		return x <= 7 && y <= 7 ? true : false;
-	}
-	
-	public boolean legitMove(String x, int y) {
-		int tempX = 0;
-		for (int i = 0; i < characters.length; i++) {
-			if(("" + characters[i]).toLowerCase().equals(x.toLowerCase())){
-				tempX = i;
-			}
-		}
-		return legitMove(tempX, y-1);
 	}
 	
 	@Override
