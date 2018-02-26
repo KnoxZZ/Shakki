@@ -1,6 +1,6 @@
 package utils;
 
-import nappulat.Nappula;
+import nappulat.*;
 
 public class Lauta {
 	final char[] characters = {'A','B','C','D','E','F','G','H'};
@@ -13,6 +13,38 @@ public class Lauta {
 				 pelilauta[i][o] = temp;
 			 }
 		 }
+	}
+	
+	public void startPos()
+	{
+		for(int i = 0; i < 8; i++) {
+			this.setNappula(6, i, new Sotilas(true));
+			this.setNappula(1, i, new Sotilas(false));
+			switch(i) {
+			case 0:
+			case 7:	
+				this.setNappula(0, i, new Torni(true));
+				this.setNappula(7, i, new Torni(false));
+				break;
+			case 1:
+			case 6:
+				this.setNappula(0, i, new Hevonen(true));
+				this.setNappula(7, i, new Hevonen(false));
+				break;
+			case 2:
+			case 5:
+				this.setNappula(0, i, new Lahetti(true));
+				this.setNappula(7, i, new Lahetti(false));
+				break;
+			case 3:
+				this.setNappula(0, i, new Kuningas(true));
+				this.setNappula(7, i, new Kuningas(false));
+				break;
+			case 4:
+				this.setNappula(0, i, new Kuningatar(true));
+				this.setNappula(7, i, new Kuningatar(false));
+			}
+		}
 	}
 	
 	public Position[][] getPelilauta() {
@@ -28,8 +60,8 @@ public class Lauta {
 	}
 	
 	public void setNappula(int x, int y, Nappula nap) {
-		pelilauta[x][x].setNappula(nap);
-		pelilauta[x][x].setHasNappula(true);
+		pelilauta[x][y].setNappula(nap);
+		pelilauta[x][y].setHasNappula(true);
 	}
 	
 	public void setPelilauta(Position[][] pelilauta) {
