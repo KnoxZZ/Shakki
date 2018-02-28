@@ -1,9 +1,10 @@
 package nappulat;
 
+import utils.OsCheck;
 import utils.Position;
 
 abstract public class Nappula {
-	final String[] codes = {"♔ ","♕ ","♖ ","♗ ","♘ ","♙ ","♚ ","♛ ","♜ ","♝ ","♞ ","♟ "};
+	String[] codes = OsCheck.getChars();
 	boolean vari;	// vari true == valkoinen, vari false == musta
 	public Nappula(boolean vari) {
 		this.vari = vari;
