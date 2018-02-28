@@ -4,7 +4,8 @@ import utils.OsCheck;
 import utils.Position;
 
 abstract public class Nappula {
-	String[] codes = OsCheck.getChars();
+	//String[] codes = OsCheck.getChars();
+	final static String[] codes = {" ♔"," ♕"," ♖"," ♗"," ♘"," ♙"," ♚"," ♛"," ♜"," ♝" ," ♞"," ♟"};
 	boolean vari;	// vari true == valkoinen, vari false == musta
 	public Nappula(boolean vari) {
 		this.vari = vari;
