@@ -14,7 +14,13 @@ public class Kuningas extends Nappula {
 
 	@Override
 	public boolean isLegit(Position startPos, Position endPos) {
-		// TODO Auto-generated method stub
-		return true;
+		int sx = startPos.getX();
+        int sy = startPos.getY();
+        int ex = endPos.getX();
+        int ey = endPos.getY();
+        if(Math.abs(sx-ex) <= 1 && Math.abs(sy-ey) <= 1) {
+        	return true;
+        }
+		return false;
 	}
 }
