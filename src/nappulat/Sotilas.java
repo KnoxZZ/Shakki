@@ -28,7 +28,7 @@ public class Sotilas extends Nappula {
 		int sy = startPos.getY();
 		int ex = startPos.getX();
 		int ey = startPos.getY();
-		if((sy+1==ey&&((sx==ex&&!endPos.hasNappula())||((sx==ex+1||sx==ex-1)&&endPos.hasNappula()&&endPos.getNappula().isVari()!=this.isVari())))||(sy==ey+2)&&(sx==ex)&&!endPos.hasNappula()&&this.isEkaAskel()) {
+		if((sy+1==ey&&((sx==ex&&!endPos.hasNappula())||((sx==ex+1||sx==ex-1)&&endPos.hasNappula()&&endPos.getNappula().isVari()!=this.isVari())))||((sy==ey+2)&&(sx==ex)&&!endPos.hasNappula()&&this.isEkaAskel())) {
 			return true;
 		}
 		return false;
