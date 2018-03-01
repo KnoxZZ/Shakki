@@ -2,7 +2,7 @@ package utils;
 
 public class OsCheck {
 	private static String OS = null;
-	final static String[] unixCodes = {"♔ ","♕ ","♖ ","♗ ","♘ ","♙ ","♚ ","♛ ","♜ ","♝ ","♞ ","♟ "};
+	final static String[] unixCodes = {"♕ ","♔ ","♖ ","♗ ","♘ ","♙ ","♛ ","♚ ","♜ ","♝ ","♞ ","♟ "};
 	final static String[] winCodes = {"K ","Q ","T ","L ","H ","S ","k ","q ","t ","l ","g ","s "};
 	   public static String[] getChars()
 	   {
