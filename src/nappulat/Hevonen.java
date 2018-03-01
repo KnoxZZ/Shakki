@@ -14,7 +14,17 @@ public class Hevonen extends Nappula {
 
 	@Override
 	public boolean isLegit(Position startPos, Position endPos) {
-		// TODO Auto-generated method stub
-		return true;
+		int sx = startPos.getX();
+        int sy = startPos.getY();
+        int ex = endPos.getX();
+        int ey = endPos.getY();
+        
+        if((sx-1==ex || sx +1 == ex) && (sy + 2 == ey || sy - 2 == ey)) {
+        	return true;
+        }else if((sy-1==ey || sy +1 == ey) && (sx + 2 == ex || sx - 2 == ex)) {
+        	return true;
+        }
+        
+        return false;
 	}
 }
