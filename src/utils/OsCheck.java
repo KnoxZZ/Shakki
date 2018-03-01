@@ -8,7 +8,6 @@ public class OsCheck {
 	   {
 	      if(OS == null) { OS = System.getProperty("os.name"); }
 	      if(OS.equals("Linux")) {
-	    	  System.out.println(OS);
 	    	  return unixCodes;
 	      }
 	      else {
