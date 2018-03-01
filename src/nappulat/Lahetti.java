@@ -14,7 +14,13 @@ public class Lahetti extends Nappula {
 
 	@Override
 	public boolean isLegit(Position startPos, Position endPos) {
-		// TODO Auto-generated method stub
-		return true;
+		int sx = startPos.getX();
+        int sy = startPos.getY();
+        int ex = endPos.getX();
+        int ey = endPos.getY();
+        if((Math.abs(sx)-Math.abs(ex)==Math.abs(sy)-Math.abs(ey))) {
+        	return true;
+        }
+		return false;
 	}
 }

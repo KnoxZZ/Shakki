@@ -14,7 +14,13 @@ public class Torni extends Nappula{
 
 	@Override
 	public boolean isLegit(Position startPos, Position endPos) {
-		// TODO Auto-generated method stub
-		return true;
+		int sx = startPos.getX();
+        int sy = startPos.getY();
+        int ex = endPos.getX();
+        int ey = endPos.getY();
+        if((sx==ex||sy==ey)&&!(sx==ex&&sy==ey)) {
+        	return true;
+        }
+		return false;
 	}
 }
