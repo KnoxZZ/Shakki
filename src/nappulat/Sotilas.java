@@ -28,6 +28,7 @@ public class Sotilas extends Nappula {
         int sy = startPos.getY();
         int ex = endPos.getX();
         int ey = endPos.getY();
+        
         if( sy+1 == ey ) {
             if(sx == ex && !endPos.hasNappula()){
                 return true;
