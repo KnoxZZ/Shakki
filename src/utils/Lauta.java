@@ -94,18 +94,18 @@ public class Lauta {
 	@Override
 	public String toString() {
 		StringBuilder ready = new StringBuilder();
-		ready.append("   A  B  C  D  E  F  G  H\n  â”Œâ”€â”€â”¬â”€â”€â”¬â”€â”€â”¬â”€â”€â”¬â”€â”€â”¬â”€â”€â”¬â”€â”€â”¬â”€â”€â”�\n");
+		ready.append("   A  B  C  D  E  F  G  H\n  ┌──┬──┬──┬──┬──┬──┬──┬──┐\n");
 		
 		for(int i = 0; i < pelilauta.length; i++) {
-			ready.append(8-i + " â”‚");
-			for(int o = 0; o < pelilauta[i].length; o++) {
-				 ready.append(pelilauta[i][o].toString() + "â”‚");
-			}
-			if (i != 7)
-				 ready.append("\n  â”œâ”€â”€â”¼â”€â”€â”¼â”€â”€â”¼â”€â”€â”¼â”€â”€â”¼â”€â”€â”¼â”€â”€â”¼â”€â”€â”¤\n");
-			else
-				 ready.append("\n  â””â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”˜\n   A  B  C  D  E  F  G  H\n");
-		}
+			ready.append(8-i + " │");
+			 for(int o = 0; o < pelilauta[i].length; o++) {
+				 ready.append(pelilauta[i][o].toString() + "│");
+			 }
+			 if (i != 7)
+				 ready.append("\n  ├──┼──┼──┼──┼──┼──┼──┼──┤\n");
+			 else
+				 ready.append("\n  └──┴──┴──┴──┴──┴──┴──┴──┘\n");
+		 }
 		return ready.toString();
 	}
 }
