@@ -101,10 +101,13 @@ public class Lauta {
 			 for(int o = 0; o < pelilauta[i].length; o++) {
 				 ready.append(pelilauta[i][o].toString() + "│");
 			 }
-			 if (i != 7)
+			 ready.append(8-i);
+			 if (i != 7) {
 				 ready.append("\n  ├──┼──┼──┼──┼──┼──┼──┼──┤\n");
-			 else
-				 ready.append("\n  └──┴──┴──┴──┴──┴──┴──┴──┘\n");
+			 }
+			 else {
+				 ready.append("\n  └──┴──┴──┴──┴──┴──┴──┴──┘\n   A  B  C  D  E  F  G  H\n");
+			 }
 		 }
 		return ready.toString();
 	}
