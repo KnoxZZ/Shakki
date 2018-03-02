@@ -5,14 +5,14 @@ import java.io.IOException;
 public class OsCheck {
 	final static String[] unixCodes = {"♕ ","♔ ","♖ ","♗ ","♘ ","♙ ","♛ ","♚ ","♜ ","♝ ","♞ ","♟ "};
 	final static String[] winCodes = {"K ","Q ","T ","L ","H ","S ","k ","q ","t ","l ","h ","s "};
-	public static String OsCheck() {
+	public static String osCheck() {
 		String OS = null;
 		if(OS == null) { OS = System.getProperty("os.name"); }
 		return OS;
 	}
 	
 	public static String[] getChars() {
-	    if(OsCheck().equals("Linux")) {
+	    if(osCheck().equals("Linux")) {
 	    	return unixCodes;
 	    }
 	    else {
@@ -21,7 +21,7 @@ public class OsCheck {
 	}
 	
 	public static void clearConsole(String... errorMsg) throws InterruptedException, IOException{
-		if(OsCheck().equals("Linux")) {
+		if(osCheck().equals("Linux")) {
 			System.out.print("\033[H\033[2J");
 		}
 		else {
