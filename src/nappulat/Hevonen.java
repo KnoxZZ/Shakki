@@ -19,11 +19,20 @@ public class Hevonen extends Nappula {
         int ex = endPos.getX();
         int ey = endPos.getY();
         
-        if((sx-1==ex || sx +1 == ex) && (sy + 2 == ey || sy - 2 == ey)) {
-        	return true;
-        }else if((sy-1==ey || sy +1 == ey) && (sx + 2 == ex || sx - 2 == ex)) {
+        if(Math.abs(sx-ex) == 1 && Math.abs(sy-ey) == 2) {
         	return true;
         }
+        else if(Math.abs(sy-ey) == 1 && Math.abs(sx-ex) == 2) {
+        	return true;
+        }
+        
+        /*
+        int asx = Math.abs(sx-ex);
+        int asy = Math.abs(sy-ey);
+        if(asx <= 2 && asy <= 2 && Math.abs(asx + asy) == 3) {
+        	return true;
+        }
+        */
         
         return false;
 	}
