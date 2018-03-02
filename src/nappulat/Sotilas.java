@@ -29,7 +29,7 @@ public class Sotilas extends Nappula {
         int ex = endPos.getX();
         int ey = endPos.getY();
         
-        if( sy+1 == ey ) {
+        if(Math.abs(sy-ey)==1) {
             if(sx == ex && !endPos.hasNappula()){
                 return true;
             } else if ((sx == ex+1 || sx == ex-1) &&
@@ -37,7 +37,7 @@ public class Sotilas extends Nappula {
                         endPos.getNappula().isVari() != this.isVari()) {
                 return true;
             }
-        } else if(sy == ey+2 &&    sx == ex &&    !endPos.hasNappula() && this.isEkaAskel()) {
+        } else if(Math.abs(sy-ey)==2 &&    sx == ex &&    !endPos.hasNappula() && this.isEkaAskel()) {
             return true;
         }
         return false;
