@@ -1,5 +1,5 @@
 .metadata
-*.class
+src/**/*.class
 bin/
 tmp/
 *.tmp
