@@ -13,7 +13,7 @@ public class OsCheck {
 	
 	public static String[] getChars() {
 	    if(osCheck().equals("Linux")) {
-	    	return unixCodes;
+	    	return winCodes;
 	    }
 	    else {
 	    	return winCodes;
@@ -23,6 +23,9 @@ public class OsCheck {
 	public static void clearConsole(String... errorMsg) throws InterruptedException, IOException{
 		if(osCheck().equals("Linux")) {
 			System.out.print("\033[H\033[2J");
+			if(errorMsg != null) {
+				System.out.println(errorMsg[0]);
+			}
 		}
 		else {
 			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
