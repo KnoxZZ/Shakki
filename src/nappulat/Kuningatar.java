@@ -25,4 +25,8 @@ public class Kuningatar extends Nappula {
 		}
 		return false;
 	}
+	
+	public String name() {
+		return "Kuningatar";
+	}
 }

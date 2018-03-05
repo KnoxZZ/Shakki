@@ -36,4 +36,8 @@ public class Hevonen extends Nappula {
         
         return false;
 	}
+	
+	public String name() {
+		return "Hevonen";
+	}
 }

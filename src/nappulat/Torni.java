@@ -23,4 +23,8 @@ public class Torni extends Nappula{
         }
 		return false;
 	}
+	
+	public String name() {
+		return "Torni";
+	}
 }

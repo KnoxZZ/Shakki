@@ -28,7 +28,7 @@ public class Sotilas extends Nappula {
         int sy = startPos.getY();
         int ex = endPos.getX();
         int ey = endPos.getY();
-        System.out.println(sx +"][" + sy + "][" + ex + "][" + ey);
+        
         if(Math.abs(sy-ey)==1) {
             if(sx == ex && !endPos.hasNappula()){
                 return true;
@@ -42,4 +42,8 @@ public class Sotilas extends Nappula {
         }
         return false;
     }
+	
+	public String name() {
+		return "Sotilas";
+	}
 }

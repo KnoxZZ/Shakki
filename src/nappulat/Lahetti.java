@@ -23,4 +23,8 @@ public class Lahetti extends Nappula {
         }
 		return false;
 	}
+	
+	public String name() {
+		return "Lahetti";
+	}
 }

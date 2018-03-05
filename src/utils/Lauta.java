@@ -35,32 +35,32 @@ public class Lauta {
 	
 	public void startPos()
 	{
-		for(int i = 0; i < 8; i++) {
-			this.setNappula(1, i, new Sotilas(true));
-			this.setNappula(6, i, new Sotilas(false));
-			switch(i) {
+		for(int x = 0; x < 8; x++) {
+			this.setNappula(x, 1, new Sotilas(false));
+			this.setNappula(x, 6, new Sotilas(true));
+			switch(x) {
 			case 0:
 			case 7:	
-				this.setNappula(0, i, new Torni(true));
-				this.setNappula(7, i, new Torni(false));
+				this.setNappula(x, 0, new Torni(false));
+				this.setNappula(x, 7, new Torni(true));
 				break;
 			case 1:
 			case 6:
-				this.setNappula(0, i, new Hevonen(true));
-				this.setNappula(7, i, new Hevonen(false));
+				this.setNappula(x, 0, new Hevonen(false));
+				this.setNappula(x, 7, new Hevonen(true));
 				break;
 			case 2:
 			case 5:
-				this.setNappula(0, i, new Lahetti(true));
-				this.setNappula(7, i, new Lahetti(false));
+				this.setNappula(x, 0, new Lahetti(false));
+				this.setNappula(x, 7, new Lahetti(true));
 				break;
 			case 3:
-				this.setNappula(0, i, new Kuningas(true));
-				this.setNappula(7, i, new Kuningas(false));
+				this.setNappula(x, 0, new Kuningas(false));
+				this.setNappula(x, 7, new Kuningas(true));
 				break;
 			case 4:
-				this.setNappula(0, i, new Kuningatar(true));
-				this.setNappula(7, i, new Kuningatar(false));
+				this.setNappula(x, 0, new Kuningatar(false));
+				this.setNappula(x, 7, new Kuningatar(true));
 				break;
 			}
 		}
@@ -96,18 +96,18 @@ public class Lauta {
 		StringBuilder ready = new StringBuilder();
 		ready.append("   A  B  C  D  E  F  G  H\n  ┌──┬──┬──┬──┬──┬──┬──┬──┐\n");
 		
-		for(int i = 0; i < pelilauta.length; i++) {
-			ready.append(8-i + " │");
-			 for(int o = 0; o < pelilauta[i].length; o++) {
-				 ready.append(pelilauta[i][o].toString() + "│");
-			 }
-			 ready.append(8-i);
-			 if (i != 7) {
-				 ready.append("\n  ├──┼──┼──┼──┼──┼──┼──┼──┤\n");
-			 }
-			 else {
-				 ready.append("\n  └──┴──┴──┴──┴──┴──┴──┴──┘\n   A  B  C  D  E  F  G  H\n");
-			 }
+		for(int y = 0; y < pelilauta.length ; y++) {
+			ready.append(y+1 + " │");
+			for(int x = 0; x < pelilauta[y].length; x++) {
+				ready.append(pelilauta[x][y].toString() + "│");
+			}
+			ready.append(" " + (y+1));
+			if (y != 7) {
+				ready.append("\n  ├──┼──┼──┼──┼──┼──┼──┼──┤\n");
+			}
+			else {
+				ready.append("\n  └──┴──┴──┴──┴──┴──┴──┴──┘\n   A  B  C  D  E  F  G  H\n");
+			}
 		 }
 		return ready.toString();
 	}

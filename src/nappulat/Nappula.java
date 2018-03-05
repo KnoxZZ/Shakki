@@ -12,6 +12,7 @@ abstract public class Nappula {
 	}
 	
 	abstract public boolean isLegit(Position startPos, Position endPos);
+	abstract public String name();
 	
 	public String toStringWithNappula(int nappula) {
 		if(vari)

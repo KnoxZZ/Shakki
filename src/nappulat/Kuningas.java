@@ -23,4 +23,8 @@ public class Kuningas extends Nappula {
         }
 		return false;
 	}
+	
+	public String name() {
+		return "Kuningas";
+	}
 }
