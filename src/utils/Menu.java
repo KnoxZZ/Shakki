@@ -2,6 +2,7 @@ package utils;
 
 import java.io.IOException;
 import java.util.*;
+import nappulat.*;
 
 import game.MainGame;
 
@@ -46,18 +47,26 @@ public class Menu {
 		int type;
 		System.out.println("Minkä nappulan haluat lisätä(1 = sotilas, 2 = torni, 3 = hevonen, 4 = lähetti, 5 = Kuningatar, 6 = Kuningas): ");
 		type = Integer.parseInt(getInput(0, 7));
+		int y = Integer.parseInt(posInput.substring(1));
+		int x = MainGame.strToInt(posInput.substring(0, 1));
 		switch (type) {
 		case 1:
+			MainGame.getLauta().setNappula(x, y, new Sotilas(vari));
 			break;
 		case 2:
+			MainGame.getLauta().setNappula(x, y, new Torni(vari));
 			break;
 		case 3:
+			MainGame.getLauta().setNappula(x, y, new Hevonen(vari));
 			break;
 		case 4:
+			MainGame.getLauta().setNappula(x, y, new Lahetti(vari));
 			break;
 		case 5:
+			MainGame.getLauta().setNappula(x, y, new Kuningatar(vari));
 			break;
 		case 6:
+			MainGame.getLauta().setNappula(x, y, new Kuningas(vari));
 			break;
 		}
 	}
