@@ -18,11 +18,11 @@ public class Kuningatar extends Nappula {
         int sy = startPos.getY();
         int ex = endPos.getX();
         int ey = endPos.getY();
-		if((Math.abs(sx)-Math.abs(ex)==Math.abs(sy)-Math.abs(ey))) {
-			if((sx==ex||sy==ey)&&!(sx==ex&&sy==ey)) {
-				return true;
-			}
-		}
+		if(Math.abs(sx-ex)==Math.abs(sy-ey)) {
+			return true;
+		} else if((sx==ex||sy==ey)&&!(sx==ex&&sy==ey)) {
+        	return true;
+        }
 		return false;
 	}
 	
