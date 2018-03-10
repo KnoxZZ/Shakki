@@ -8,7 +8,7 @@ public class Menu {
 	
 	public static void menu(Lauta lauta) throws InterruptedException, IOException {
 		String input;
-		OsCheck.clearConsole();
+		OsCheck.clearConsole("");
 		System.out.println("1. Jatka\n2. Tallenna\n3. Lataa\n4. Lis‰‰ nappula \n5. Poista nappula");
 		input = getInput();
 		int inp = Integer.parseInt(input);

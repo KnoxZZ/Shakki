@@ -1,8 +1,12 @@
 package utils;
 
+import java.io.Serializable;
+
 import nappulat.Nappula;
 
-public class Position {
+public class Position implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	final char[] characters = {'A','B','C','D','E','F','G','H'};
 	Nappula nappula;
 	boolean hasNappula;

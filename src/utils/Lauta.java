@@ -1,8 +1,12 @@
 package utils;
 
+import java.io.Serializable;
+
 import nappulat.*;
 
-public class Lauta {
+public class Lauta implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	final char[] characters = {'A','B','C','D','E','F','G','H'};
 	Position[][] pelilauta;
 	public Lauta() {

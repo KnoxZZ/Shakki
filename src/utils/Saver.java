@@ -1,5 +1,6 @@
 package utils;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -11,21 +12,24 @@ public class Saver {
 	public void saveBoard(Lauta gameBoard, String name) {
 		
 		try {
-			FileOutputStream fileOut = new FileOutputStream("/tmp/" + name + ".shakki");
+			FileOutputStream fileOut = new FileOutputStream(name + ".shakki");
 	        ObjectOutputStream out = new ObjectOutputStream(fileOut);
 	        out.writeObject(gameBoard);
 	        out.close();
 	        fileOut.close();
-	        System.out.printf("Saved with name: " + name + " in " + "/tmp/" + name + ".shakki");
+	        System.out.println("Saved with name: " + name + ".shakki");
 		} catch (IOException i) {
-			System.out.print("Can't save. Reason: " + i.getMessage());
+			i.printStackTrace();
+			System.out.println("Can't save. Reason: " + i.getMessage());
 		}
 	}
 	
 	public Lauta loadBoard(String name) {
 		Lauta gameBoard = null;
 	    try {
-	    	FileInputStream fileIn = new FileInputStream("/tmp/" + name + ".shakki");
+	    	File file = new File(name + ".shakki");
+	    	file.createNewFile();
+	    	FileInputStream fileIn = new FileInputStream(name + ".shakki");
 	        ObjectInputStream in = new ObjectInputStream(fileIn);
 	        gameBoard = (Lauta) in.readObject();
 	        in.close();

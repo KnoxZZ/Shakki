@@ -1,9 +1,13 @@
 package nappulat;
 
+import java.io.Serializable;
+
 import utils.OsCheck;
 import utils.Position;
 
-abstract public class Nappula {
+abstract public class Nappula implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
 	String[] codes = OsCheck.getChars();
 	//final String[] codes = {"♔","♕","♖","♗","♘","♙","♚","♛","♜","♝","♞","♟"};
 	boolean vari;	// vari true == valkoinen, vari false == musta
