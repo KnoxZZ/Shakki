@@ -1,5 +1,6 @@
 package nappulat;
 
+import game.MainGame;
 import utils.Position;
 
 public class Torni extends Nappula{
@@ -19,9 +20,33 @@ public class Torni extends Nappula{
         int ex = endPos.getX();
         int ey = endPos.getY();
         if((sx==ex||sy==ey)&&!(sx==ex&&sy==ey)) {
-        	return true;
+        	if(!nappulanYli(startPos, endPos)) {
+        		return true;
+        	}
         }
 		return false;
+	}
+	
+	public boolean nappulanYli(Position startPos, Position endPos) {
+		int sx = startPos.getX();
+        int sy = startPos.getY();
+        int ex = endPos.getX();
+        int ey = endPos.getY();
+        if(sx==ex) {
+        	for(int i = sy; i < ey; i++) {
+        		if(MainGame.getLauta().getPosition(sx, i).hasNappula()) {
+        			return true;
+        		}
+        	}
+        }
+        else {
+        	for(int i = sx; i < ex; i++) {
+        		if(MainGame.getLauta().getPosition(sy, i).hasNappula()) {
+        			return true;
+        		}
+        	}
+        }
+        return false;
 	}
 	
 	public String name() {
