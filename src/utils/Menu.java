@@ -22,6 +22,7 @@ public class Menu {
 			break;
 		case 3:
 			Lauta pelilauta = loadBoard();
+			MainGame.start(pelilauta);
 			break;
 		case 4:
 			addNappula();
