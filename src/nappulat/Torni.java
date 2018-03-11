@@ -27,7 +27,6 @@ public class Torni extends Nappula{
         	if(!nappulanYli(startPos, endPos, game)) {
         		return true;
         	}
-        	return true;
         }
 		return false;
 	}
