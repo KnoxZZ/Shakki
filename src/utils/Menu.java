@@ -36,7 +36,7 @@ public class Menu {
 		game.startTurns();
 	}
 	
-	public static void addNappula(MainGame game) {
+	public static MainGame addNappula(MainGame game) {
 		String posInput;
 		System.out.println("Anna asetettavan nappulan sijainti(esim. A5): ");
 		posInput = getPosInput();
@@ -45,11 +45,10 @@ public class Menu {
 		System.out.println("Minka varinen(0 = musta, 1 = valkoinen): ");
 		temp = Integer.parseInt(getInput(-1,2));
 		vari = temp==1?true:false;
-		String Nappula;
 		int type;
 		System.out.println("Minka nappulan haluat lisata(1 = sotilas, 2 = torni, 3 = hevonen, 4 = lahetti, 5 = Kuningatar, 6 = Kuningas): ");
 		type = Integer.parseInt(getInput(0, 7));
-		int y = Integer.parseInt(posInput.substring(1));
+		int y = Integer.parseInt(posInput.substring(1))-1;
 		int x = MainGame.strToInt(posInput.substring(0, 1));
 		switch (type) {
 			case 1:
@@ -71,6 +70,7 @@ public class Menu {
 				game.pelilauta.setNappula(x, y, new Kuningas(vari));
 				break;
 		}
+		return game;
 	}
 	
 	public static void delNappula(MainGame game) {

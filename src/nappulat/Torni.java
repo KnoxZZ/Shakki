@@ -20,9 +20,9 @@ public class Torni extends Nappula{
         int ex = endPos.getX();
         int ey = endPos.getY();
         if((sx==ex||sy==ey)&&!(sx==ex&&sy==ey)) {
-//        	if(!nappulanYli(startPos, endPos)) {
-//        		return true;
-//        	}
+        	if(!nappulanYli(startPos, endPos, game)) {
+        		return true;
+        	}
         	return true;
         }
 		return false;

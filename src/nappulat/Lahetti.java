@@ -20,9 +20,9 @@ public class Lahetti extends Nappula {
         int ex = endPos.getX();
         int ey = endPos.getY();
         if(Math.abs(sx-ex)==Math.abs(sy-ey)) {
-//        	if(!nappulanYli(startPos, endPos)) {
-//        		return true;
-//        	}
+        	if(!nappulanYli(startPos, endPos, game)) {
+        		return true;
+        	}
         	return true;
         }
 		return false;
