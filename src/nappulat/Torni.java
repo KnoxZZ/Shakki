@@ -4,15 +4,19 @@ import game.MainGame;
 import utils.Position;
 
 public class Torni extends Nappula{
+	
+	// Tornin konsturktori
 	public Torni(boolean vari) {
 		super(vari);
 	}
 	
+	// toString metodi joka kayttaa Nappula luokan toStringWithNappulaa apuna merkin maarittamisessa
 	@Override
 	public String toString() {
 		return super.toStringWithNappula(2);
 	}
-
+	
+	//Metodi joka tarkistaa onko siirto laillinen
 	@Override
 	public boolean isLegit(Position startPos, Position endPos, MainGame game) {
 		int sx = startPos.getX();
@@ -28,6 +32,7 @@ public class Torni extends Nappula{
 		return false;
 	}
 	
+	//Metodi joka tarkistaa hyppaako nappula jonkun muun nappulan yli
 	public boolean nappulanYli(Position startPos, Position endPos, MainGame game) {
 		int sx = startPos.getX();
 		int sy = startPos.getY();
@@ -122,6 +127,7 @@ public class Torni extends Nappula{
 //        return false;
 //	}
 	
+	//Palauttaa Nappulan nimen
 	public String name() {
 		return "Torni";
 	}
