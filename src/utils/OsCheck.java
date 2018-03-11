@@ -19,7 +19,7 @@ public class OsCheck {
 	//Palauttaa oikean merkkilistan 
 	public static String[] getChars() {
 	    if(osCheck()) {
-	    	return winCodes;
+	    	return unixCodes;
 	    }
 	    else {
 	    	return winCodes;
