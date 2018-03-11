@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 
 public class Saver {
 	
-	//Tallentaa pelin nimellä name
+	//Tallentaa pelin nimella name
 	public void saveBoard(Lauta gameBoard, String name) {
 		
 		try {
@@ -25,7 +25,7 @@ public class Saver {
 		}
 	}
 	
-	// Lataa pelin joka on tallennettu nimellä name
+	// Lataa pelin joka on tallennettu nimella name
 	public Lauta loadBoard(String name) {
 		Lauta gameBoard = null;
 	    try {

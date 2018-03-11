@@ -1,6 +1,6 @@
 package utils;
 
-// Error Luokka käytettäväksi MoveCheckerissä
+// Error Luokka kaytettavaksi MoveCheckerissa
 
 public class MoveException extends Throwable {
 
