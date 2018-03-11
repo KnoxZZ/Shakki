@@ -1,12 +1,12 @@
 package utils;
 
+// Error Luokka käytettäväksi MoveCheckerissä
+
 public class MoveException extends Throwable {
 
-	/**
-	 * ATM newswet. Firstnumber main version, second subversion
-	 */
 	private static final long serialVersionUID = 10L;
-
+	
+	// Constructors auto created by eclipse
 	public MoveException() {
 		this("Can't do that move");
 	}

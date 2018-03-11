@@ -3,6 +3,8 @@ package utils;
 import game.MainGame;
 import nappulat.Nappula;
 
+// Apu luokka, joka varmistaa siirron laillisuuden geneeriset osuudet
+
 public class MoveChecker {
 	
 	public boolean isValid(Position start, Position end, Lauta pelilauta, boolean turn, MainGame game) throws MoveException {
