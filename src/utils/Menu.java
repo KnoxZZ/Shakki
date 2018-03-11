@@ -83,7 +83,7 @@ public class Menu {
 		String input;
 		System.out.println("Anna poistettavan nappulan sijainti(esim. A5): ");
 		input = getPosInput();
-		game.getLauta().delNappula(MainGame.strToInt(input.substring(0, 1)), Integer.parseInt(input.substring(1)));
+		game.getLauta().delNappula(MainGame.strToInt(input.substring(0, 1)), Integer.parseInt(input.substring(1))-1);
 	}
 	
 	//Vastaanotetaan kauttajan syotetta ja tarkistetaan etta se on oikeassa muodossa
