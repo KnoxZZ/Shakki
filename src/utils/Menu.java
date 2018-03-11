@@ -9,7 +9,7 @@ import game.MainGame;
 public class Menu {
 	static Scanner r = new Scanner(System.in);
 	
-	public static void menu(Lauta lauta) throws InterruptedException, IOException {
+	public static void menu(Lauta lauta, MainGame game) throws InterruptedException, IOException {
 		String input;
 		OsCheck.clearConsole("");
 		System.out.println("1. Jatka\n2. Tallenna\n3. Lataa\n4. Lisaa nappula \n5. Poista nappula");
@@ -23,18 +23,18 @@ public class Menu {
 			break;
 		case 3:
 			Lauta pelilauta = loadBoard();
-			MainGame.start(pelilauta);
+			game.start(pelilauta);
 			break;
 		case 4:
-			addNappula();
+			addNappula(game);
 			break;
 		case 5:
-			delNappula();
+			delNappula(game);
 			break;
 		}
 	}
 	
-	public static void addNappula() {
+	public static void addNappula(MainGame game) {
 		String posInput;
 		System.out.println("Anna asetettavan nappulan sijainti(esim. A5): ");
 		posInput = getPosInput();
@@ -51,31 +51,31 @@ public class Menu {
 		int x = MainGame.strToInt(posInput.substring(0, 1));
 		switch (type) {
 		case 1:
-			MainGame.getLauta().setNappula(x, y, new Sotilas(vari));
+			game.getLauta().setNappula(x, y, new Sotilas(vari));
 			break;
 		case 2:
-			MainGame.getLauta().setNappula(x, y, new Torni(vari));
+			game.getLauta().setNappula(x, y, new Torni(vari));
 			break;
 		case 3:
-			MainGame.getLauta().setNappula(x, y, new Hevonen(vari));
+			game.getLauta().setNappula(x, y, new Hevonen(vari));
 			break;
 		case 4:
-			MainGame.getLauta().setNappula(x, y, new Lahetti(vari));
+			game.getLauta().setNappula(x, y, new Lahetti(vari));
 			break;
 		case 5:
-			MainGame.getLauta().setNappula(x, y, new Kuningatar(vari));
+			game.getLauta().setNappula(x, y, new Kuningatar(vari));
 			break;
 		case 6:
-			MainGame.getLauta().setNappula(x, y, new Kuningas(vari));
+			game.getLauta().setNappula(x, y, new Kuningas(vari));
 			break;
 		}
 	}
 	
-	public static void delNappula() {
+	public static void delNappula(MainGame game) {
 		String input;
 		System.out.println("Anna poistettavan nappulan sijainti(esim. A5): ");
 		input = getPosInput();
-		MainGame.getLauta().delNappula(MainGame.strToInt(input.substring(0, 1)), Integer.parseInt(input.substring(1)));
+		game.getLauta().delNappula(MainGame.strToInt(input.substring(0, 1)), Integer.parseInt(input.substring(1)));
 	}
 	
 	public static String getPosInput() {
