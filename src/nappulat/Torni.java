@@ -28,8 +28,51 @@ public class Torni extends Nappula{
 		return false;
 	}
 	
+	public boolean nappulanYli(Position startPos, Position endPos) {
+		int sx = startPos.getX();
+		int sy = startPos.getY();
+		int ex = endPos.getX();
+		int ey = endPos.getY();
+		if(sx==ex) {
+			if(sy-ey<0) {
+				for(int i = sy+1; i < ey; i++) {
+					if(MainGame.getLauta().getPosition(sx, i).hasNappula()) {
+						return true;
+					}
+				}
+			}
+			else {
+				for(int i = ey+1; i < sy; i++) {
+					if(MainGame.getLauta().getPosition(sx, i).hasNappula()) {
+						return true;
+					}
+				}
+			}
+		}
+		else if(sy==ey) {
+			if(sx-ex<0) {
+				for(int i = sx+1; i < ex; i++) {
+					if(MainGame.getLauta().getPosition(i, sy).hasNappula()) {
+						return true;
+					}
+				}
+			}
+			else {
+				for(int i = ex+1; i < sx; i++) {
+					if(MainGame.getLauta().getPosition(i, sy).hasNappula()) {
+						return true;
+					}
+				}
+			}
+		}
+		else {
+			return false;
+		}
+		return false;
+	}
+	
 //	public boolean nappulanYli(Position startPos, Position endPos) {
-//		int sx = startPos.getX();
+//		  int sx = startPos.getX();
 //        int sy = startPos.getY();
 //        int ex = endPos.getX();
 //        int ey = endPos.getY();

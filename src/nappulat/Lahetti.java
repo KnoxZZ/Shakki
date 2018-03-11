@@ -28,6 +28,58 @@ public class Lahetti extends Nappula {
 		return false;
 	}
 	
+	public boolean nappulanYli(Position startPos, Position endPos) {
+		int sx = startPos.getX();
+        int sy = startPos.getY();
+        int ex = endPos.getX();
+        int ey = endPos.getY();
+		if(sx < ex && sy < ey) {
+			int x = sx;
+			int y = sy;
+			while(sx < ex - 1 && y < ey - 1) {
+				x++;
+				y++;
+				if (MainGame.getLauta().getPosition(x, y).hasNappula()) {
+					return true;
+				}
+			}
+		}
+		else if(sx < ex && sy > ey) {
+			int x = sx;
+			int y = sy;
+			while(x < ex - 1 && y > ey + 1) {
+				x++;
+				y--;
+				if (MainGame.getLauta().getPosition(x, y).hasNappula()) {
+					return true;
+				}
+			}
+		}
+		else if(sx > ex && sy < ey) {
+			int x = sx;
+			int y = sy;
+			while(x > ex + 1 && y < ey - 1) {
+				x--;
+				y++;
+				if (MainGame.getLauta().getPosition(x, y).hasNappula()) {
+					return true;
+				}
+			}
+		}
+		else if(sx > ex && sy > ey) {
+			int x = sx;
+			int y = sy;
+			while(sx > ex + 1 && y > ey + 1) {
+				x--;
+				y--;
+				if (MainGame.getLauta().getPosition(x, y).hasNappula()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 //	public boolean nappulanYli(Position startPos, Position endPos) {
 //		Lauta lauta = MainGame.getLauta();
 //		int sx = startPos.getX();
