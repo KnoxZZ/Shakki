@@ -23,7 +23,7 @@ public class Menu {
 			break;
 		case 3:
 			Lauta pelilauta = loadBoard();
-			game.start(pelilauta);
+			game.setLauta(pelilauta);
 			break;
 		case 4:
 			addNappula(game);
@@ -32,6 +32,8 @@ public class Menu {
 			delNappula(game);
 			break;
 		}
+		
+		game.startTurns();
 	}
 	
 	public static void addNappula(MainGame game) {
@@ -50,24 +52,24 @@ public class Menu {
 		int y = Integer.parseInt(posInput.substring(1));
 		int x = MainGame.strToInt(posInput.substring(0, 1));
 		switch (type) {
-		case 1:
-			game.getLauta().setNappula(x, y, new Sotilas(vari));
-			break;
-		case 2:
-			game.getLauta().setNappula(x, y, new Torni(vari));
-			break;
-		case 3:
-			game.getLauta().setNappula(x, y, new Hevonen(vari));
-			break;
-		case 4:
-			game.getLauta().setNappula(x, y, new Lahetti(vari));
-			break;
-		case 5:
-			game.getLauta().setNappula(x, y, new Kuningatar(vari));
-			break;
-		case 6:
-			game.getLauta().setNappula(x, y, new Kuningas(vari));
-			break;
+			case 1:
+				game.pelilauta.setNappula(x, y, new Sotilas(vari));
+				break;
+			case 2:
+				game.pelilauta.setNappula(x, y, new Torni(vari));
+				break;
+			case 3:
+				game.pelilauta.setNappula(x, y, new Hevonen(vari));
+				break;
+			case 4:
+				game.pelilauta.setNappula(x, y, new Lahetti(vari));
+				break;
+			case 5:
+				game.pelilauta.setNappula(x, y, new Kuningatar(vari));
+				break;
+			case 6:
+				game.pelilauta.setNappula(x, y, new Kuningas(vari));
+				break;
 		}
 	}
 	
@@ -114,6 +116,7 @@ public class Menu {
 		}
 		return input;
 	}
+	
 	public static boolean legitInput(String input, int pieni, int suuri) {
 		if(input.length()==1&&isInteger(input)&&Integer.parseInt(input)<suuri&&Integer.parseInt(input)>pieni) {
 			return true;
