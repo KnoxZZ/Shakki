@@ -5,14 +5,17 @@ import java.io.IOException;
 public class OsCheck {
 	final static String[] unixCodes = {"â™• ","â™” ","â™– ","â™— ","â™˜ ","â™™ ","â™› ","â™š ","â™œ ","â™� ","â™ž ","â™Ÿ "};
 	final static String[] winCodes = {"Q ","K ","T ","L ","H ","S ","q ","K ","t ","l ","h ","s "};
-	public static String osCheck() {
+	public static boolean osCheck() {
 		String OS = null;
 		if(OS == null) { OS = System.getProperty("os.name"); }
-		return OS;
+		if(OS.equals("Linux")) {
+			return true;
+		}
+		return false;
 	}
 	
 	public static String[] getChars() {
-	    if(osCheck().equals("Linux")) {
+	    if(osCheck()) {
 	    	return winCodes;
 	    }
 	    else {
@@ -21,7 +24,7 @@ public class OsCheck {
 	}
 	
 	public static void clearConsole(String... errorMsg) throws InterruptedException, IOException{
-		if(osCheck().equals("Linux")) {
+		if(osCheck()) {
 			System.out.print("\033[H\033[2J");
 			if(errorMsg != null) {
 				System.out.println(errorMsg[0]);
