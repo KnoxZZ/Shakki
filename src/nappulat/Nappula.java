@@ -2,8 +2,8 @@ package nappulat;
 
 import java.io.Serializable;
 
-import utils.OsCheck;
-import utils.Position;
+import game.MainGame;
+import utils.*;
 
 abstract public class Nappula implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -15,7 +15,7 @@ abstract public class Nappula implements Serializable{
 		this.vari = vari;
 	}
 	
-	abstract public boolean isLegit(Position startPos, Position endPos);
+	abstract public boolean isLegit(Position startPos, Position endPos, MainGame game);
 	abstract public String name();
 	
 	public String toStringWithNappula(int nappula) {

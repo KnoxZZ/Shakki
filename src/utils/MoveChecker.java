@@ -1,10 +1,11 @@
 package utils;
 
+import game.MainGame;
 import nappulat.Nappula;
 
 public class MoveChecker {
 	
-	public boolean isValid(Position start, Position end, Lauta pelilauta, boolean turn) throws MoveException {
+	public boolean isValid(Position start, Position end, Lauta pelilauta, boolean turn, MainGame game) throws MoveException {
 		
 		if(!pelilauta.legitMove(start.getX(), start.getY()) || !pelilauta.legitMove(end.getX(), end.getY())) {
 			throw(new MoveException("Move outside the board"));
@@ -20,7 +21,7 @@ public class MoveChecker {
 			throw(new MoveException("Not your piece"));
 		}
 		
-		if(!toMove.isLegit(start, end)) {
+		if(!toMove.isLegit(start, end, game)) {
 			throw(new MoveException("Illegal move for that piece"));
 		}
 		

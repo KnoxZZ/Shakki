@@ -14,7 +14,7 @@ public class Lahetti extends Nappula {
 	}
 
 	@Override
-	public boolean isLegit(Position startPos, Position endPos) {
+	public boolean isLegit(Position startPos, Position endPos, MainGame game) {
 		int sx = startPos.getX();
         int sy = startPos.getY();
         int ex = endPos.getX();
@@ -28,7 +28,7 @@ public class Lahetti extends Nappula {
 		return false;
 	}
 	
-	public boolean nappulanYli(Position startPos, Position endPos) {
+	public boolean nappulanYli(Position startPos, Position endPos, MainGame game) {
 		int sx = startPos.getX();
         int sy = startPos.getY();
         int ex = endPos.getX();
@@ -39,7 +39,7 @@ public class Lahetti extends Nappula {
 			while(sx < ex - 1 && y < ey - 1) {
 				x++;
 				y++;
-				if (MainGame.getLauta().getPosition(x, y).hasNappula()) {
+				if (game.getLauta().getPosition(x, y).hasNappula()) {
 					return true;
 				}
 			}
@@ -50,7 +50,7 @@ public class Lahetti extends Nappula {
 			while(x < ex - 1 && y > ey + 1) {
 				x++;
 				y--;
-				if (MainGame.getLauta().getPosition(x, y).hasNappula()) {
+				if (game.getLauta().getPosition(x, y).hasNappula()) {
 					return true;
 				}
 			}
@@ -61,7 +61,7 @@ public class Lahetti extends Nappula {
 			while(x > ex + 1 && y < ey - 1) {
 				x--;
 				y++;
-				if (MainGame.getLauta().getPosition(x, y).hasNappula()) {
+				if (game.getLauta().getPosition(x, y).hasNappula()) {
 					return true;
 				}
 			}
@@ -72,7 +72,7 @@ public class Lahetti extends Nappula {
 			while(sx > ex + 1 && y > ey + 1) {
 				x--;
 				y--;
-				if (MainGame.getLauta().getPosition(x, y).hasNappula()) {
+				if (game.getLauta().getPosition(x, y).hasNappula()) {
 					return true;
 				}
 			}

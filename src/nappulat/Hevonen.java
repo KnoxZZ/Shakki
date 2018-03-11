@@ -1,5 +1,6 @@
 package nappulat;
 
+import game.MainGame;
 import utils.Position;
 
 public class Hevonen extends Nappula {
@@ -13,7 +14,7 @@ public class Hevonen extends Nappula {
 	}
 
 	@Override
-	public boolean isLegit(Position startPos, Position endPos) {
+	public boolean isLegit(Position startPos, Position endPos, MainGame game) {
 		int sx = startPos.getX();
         int sy = startPos.getY();
         int ex = endPos.getX();
