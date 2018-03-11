@@ -13,12 +13,14 @@ public class Position implements Serializable {
 	int x;
 	int y;
 	
+	//Konstruktori Position olioille
 	public Position(int x, int y, boolean hasNappula) {
 		this.x = x;
 		this.y = y;
 		this.hasNappula = hasNappula;
 	}
 	
+	//toString metodi joka tulostaa oikean merkin oikeaa nappulaa kohtaan
 	@Override
 	public String toString() {
 		if(hasNappula)
@@ -26,6 +28,8 @@ public class Position implements Serializable {
 		else
 			return "  ";
 	}
+	
+	//Asetus- ja havainnointimetodeita
 	
 	public boolean hasNappula() {
 		return hasNappula;

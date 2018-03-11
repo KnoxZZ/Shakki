@@ -9,6 +9,8 @@ public class Lauta implements Serializable {
 	
 	final char[] characters = {'A','B','C','D','E','F','G','H'};
 	Position[][] pelilauta;
+	
+	// Pelilaudan konsturktori
 	public Lauta() {
 		 pelilauta = new Position[8][8];
 		 for(int i = 0; i < pelilauta.length; i++) {
@@ -19,14 +21,17 @@ public class Lauta implements Serializable {
 		 }
 	}
 	
+	//metodi joka "poistaa" nappulan koordinaateista
 	public void delNappula(int x, int y) {
 		this.setHasNappula(x, y, false);
 	}
 	
+	//Metodi joka tarkistaa onko liike laudan sisällä
 	public boolean legitMove(int x, int y) {
 		return x <= 7 && y <= 7 ? true : false;
 	}
 	
+	//Overloadattu metodi joka tarkistaa onko erilaisella syotteella olevat koordinaatit
 	public boolean legitMove(String x, int y) {
 		int tempX = 0;
 		for (int i = 0; i < characters.length; i++) {
@@ -37,6 +42,7 @@ public class Lauta implements Serializable {
 		return legitMove(tempX, y-1);
 	}
 	
+	// Alustaa laudan eli lisää oikeisiin paikkoihin oikeat nappulat
 	public void startPos()
 	{
 		for(int x = 0; x < 8; x++) {
@@ -70,6 +76,8 @@ public class Lauta implements Serializable {
 		}
 	}
 	
+	
+	//tasta alaspain on vain asetus- ja havainnointimetodeita seka yksi toString metodi
 	public Position[][] getPelilauta() {
 		return pelilauta;
 	}

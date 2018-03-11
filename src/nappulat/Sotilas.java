@@ -5,24 +5,23 @@ import utils.Position;
 
 public class Sotilas extends Nappula {
 	boolean ekaAskel;	//true ennen kuin eka askel on otettu
+	
+	// Sotilaan konstruktori
 	public Sotilas(boolean vari) {
 		super(vari);
 		ekaAskel = true;
 	}
 	
+	
+	//toString metodi sotilaalle joka kayttaa ylaluokkan toStringWitNappula metodia apunaan
 	@Override
 	public String toString() {
 		return super.toStringWithNappula(5);
 	}
 	
-	public boolean isEkaAskel() {
-		return ekaAskel;
-	}
 
-	public void setEkaAskel(boolean ekaAskel) {
-		this.ekaAskel = ekaAskel;
-	}
-
+	
+	//Metodi joka tarkistaa onko siirto laillinen
 	@Override
 	public boolean isLegit(Position startPos, Position endPos, MainGame game) {
         int sx = startPos.getX();
@@ -44,7 +43,17 @@ public class Sotilas extends Nappula {
         return false;
     }
 	
+	//Nappula luokan abstraktin metodin toteutus
 	public String name() {
 		return "Sotilas";
+	}
+	
+	
+	public boolean isEkaAskel() {
+		return ekaAskel;
+	}
+
+	public void setEkaAskel(boolean ekaAskel) {
+		this.ekaAskel = ekaAskel;
 	}
 }

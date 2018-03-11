@@ -9,6 +9,8 @@ import game.MainGame;
 public class Menu {
 	static Scanner r = new Scanner(System.in);
 	
+	
+	//Kysytaan kayttajalta mita han haluaa tehda
 	public static void menu(Lauta lauta, MainGame game) throws InterruptedException, IOException {
 		String input;
 		OsCheck.clearConsole("");
@@ -36,7 +38,8 @@ public class Menu {
 		game.startTurns();
 	}
 	
-	public static MainGame addNappula(MainGame game) {
+	//Lisaa kayttajan haluaman nappulan kayttajan haluamaan paikkaan
+	public static MainGame addNappula(MainGame game) throws InterruptedException, IOException {
 		String posInput;
 		System.out.println("Anna asetettavan nappulan sijainti(esim. A5): ");
 		posInput = getPosInput();
@@ -46,8 +49,8 @@ public class Menu {
 		temp = Integer.parseInt(getInput(-1,2));
 		vari = temp==1?true:false;
 		int type;
-		System.out.println("Minka nappulan haluat lisata(1 = sotilas, 2 = torni, 3 = hevonen, 4 = lahetti, 5 = Kuningatar, 6 = Kuningas): ");
-		type = Integer.parseInt(getInput(0, 7));
+		System.out.println("Minka nappulan haluat lisata(1 = sotilas, 2 = torni, 3 = hevonen, 4 = lahetti, 5 = Kuningatar, 6 = Kuningas, 7 = takaisin): ");
+		type = Integer.parseInt(getInput(0, 8));
 		int y = Integer.parseInt(posInput.substring(1))-1;
 		int x = MainGame.strToInt(posInput.substring(0, 1));
 		switch (type) {
@@ -69,10 +72,13 @@ public class Menu {
 			case 6:
 				game.pelilauta.setNappula(x, y, new Kuningas(vari));
 				break;
+			case 7:
+				menu(game.getLauta(), game);
 		}
 		return game;
 	}
 	
+	//Poistetaan nappula kauttajan haluamasta paikasta
 	public static void delNappula(MainGame game) {
 		String input;
 		System.out.println("Anna poistettavan nappulan sijainti(esim. A5): ");
@@ -80,6 +86,7 @@ public class Menu {
 		game.getLauta().delNappula(MainGame.strToInt(input.substring(0, 1)), Integer.parseInt(input.substring(1)));
 	}
 	
+	//Vastaanotetaan kauttajan syotetta ja tarkistetaan etta se on oikeassa muodossa
 	public static String getPosInput() {
 		String input;
 		input = r.next();
@@ -91,6 +98,7 @@ public class Menu {
 		return input;
 	}
 	
+	//Tallennetaan lauta
 	public static void saveBoard(Lauta lauta) {
 		Saver saver = new Saver();
 		System.out.println("Anna tallennuksen nimi:");
@@ -98,6 +106,7 @@ public class Menu {
 		saver.saveBoard(lauta, name);
 	}
 	
+	//Ladataan tallennettu lauta
 	public static Lauta loadBoard() {
 		Saver saver = new Saver();
 		System.out.println("Anna tallennuksen nimi:");
@@ -106,6 +115,7 @@ public class Menu {
 		return lauta;
 	}
 	
+	// Vastaanotetaan kauttajan numeraali syotetta valilla pieni ja suuri
 	public static String getInput(int pieni, int suuri) {
 		String input;
 		input = r.next();
@@ -117,12 +127,15 @@ public class Menu {
 		return input;
 	}
 	
+	// tarkistetaan onko syote oikein
 	public static boolean legitInput(String input, int pieni, int suuri) {
 		if(input.length()==1&&isInteger(input)&&Integer.parseInt(input)<suuri&&Integer.parseInt(input)>pieni) {
 			return true;
 		}
 		return false;
 	}
+	
+	//Tarkistetaan onko merkkijonon sisalto numero
 	public static boolean isInteger( String input )
 	{
 	   try
