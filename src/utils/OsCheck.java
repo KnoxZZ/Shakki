@@ -3,7 +3,7 @@ package utils;
 import java.io.IOException;
 
 public class OsCheck {
-	final static String[] unixCodes = {"♔ ","♕ ","♖ ","♗ ","♘  ","♙ ","♚ ","♛ ","♜ ","♝ ","♞ ","♟ "};
+	final static String[] unixCodes = {"♔ ","♕ ","♖ ","♗ ","♘ ","♙ ","♚ ","♛ ","♜ ","♝ ","♞ ","♟ "};
 	final static String[] winCodes = {"Q ","K ","T ","L ","H ","S ","q ","K ","t ","l ","h ","s "};
 	
 	//Tarkistaa onko kayttojarjestelma Linux vai joku muu
@@ -19,7 +19,7 @@ public class OsCheck {
 	//Palauttaa oikean merkkilistan 
 	public static String[] getChars() {
 	    if(osCheck()) {
-	    	return winCodes;
+	    	return unixCodes;
 	    }
 	    else {
 	    	return winCodes;

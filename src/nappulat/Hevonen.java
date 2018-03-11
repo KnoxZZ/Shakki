@@ -4,15 +4,18 @@ import game.MainGame;
 import utils.Position;
 
 public class Hevonen extends Nappula {
+	// Hevosen konstruktori
 	public Hevonen(boolean vari) {
 		super(vari);
 	}
 	
+	// toString metodi joka kayttaa Nappula luokan toStringWithNappulaa apuna merkin maarittamisessa
 	@Override
 	public String toString() {
 		return super.toStringWithNappula(4);
 	}
-
+	
+	//Metodi joka tarkistaa onko siirto laillinen
 	@Override
 	public boolean isLegit(Position startPos, Position endPos, MainGame game) {
 		int sx = startPos.getX();
@@ -38,6 +41,7 @@ public class Hevonen extends Nappula {
         return false;
 	}
 	
+	//Palauttaa Nappulan nimen
 	public String name() {
 		return "Hevonen";
 	}
