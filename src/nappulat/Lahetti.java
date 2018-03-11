@@ -62,11 +62,9 @@ public class Lahetti extends Nappula {
 			py=sy;
 			suy=ey;
 		}
-		for(int i = px; i <= sux; i++) {
-			for(int j = py; j <= suy; j++) {
-				if(lauta.getPosition(i, j).hasNappula()) {
-					return true;
-				}
+		for(int i = 0; i < px-sux; i++) {
+			if(lauta.getPosition(px+i, py+i).hasNappula()) {
+				return true;
 			}
 		}
 		return false;

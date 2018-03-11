@@ -12,7 +12,7 @@ public class Menu {
 	public static void menu(Lauta lauta) throws InterruptedException, IOException {
 		String input;
 		OsCheck.clearConsole("");
-		System.out.println("1. Jatka\n2. Tallenna\n3. Lataa\n4. Lis‰‰ nappula \n5. Poista nappula");
+		System.out.println("1. Jatka\n2. Tallenna\n3. Lataa\n4. Lisaa nappula \n5. Poista nappula");
 		input = getInput(0,6);
 		int inp = Integer.parseInt(input);
 		switch (inp) {
@@ -40,12 +40,12 @@ public class Menu {
 		posInput = getPosInput();
 		boolean vari;
 		int temp = 0;
-		System.out.println("Mink‰ v‰rinen(0 = musta, 1 = valkoinen): ");
+		System.out.println("Minka varinen(0 = musta, 1 = valkoinen): ");
 		temp = Integer.parseInt(getInput(-1,2));
 		vari = temp==1?true:false;
 		String Nappula;
 		int type;
-		System.out.println("Mink‰ nappulan haluat lis‰t‰(1 = sotilas, 2 = torni, 3 = hevonen, 4 = l‰hetti, 5 = Kuningatar, 6 = Kuningas): ");
+		System.out.println("Minka nappulan haluat lisata(1 = sotilas, 2 = torni, 3 = hevonen, 4 = lahetti, 5 = Kuningatar, 6 = Kuningas): ");
 		type = Integer.parseInt(getInput(0, 7));
 		int y = Integer.parseInt(posInput.substring(1));
 		int x = MainGame.strToInt(posInput.substring(0, 1));
